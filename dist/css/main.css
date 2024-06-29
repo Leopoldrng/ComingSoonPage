@@ -37,11 +37,25 @@
 }
 
 header {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-top: 30px;
+  display: flex;
+  justify-content: flex-end; /* Aligns logo to the right on desktop */
+  padding: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: c;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 100px;
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center; /* Centers logo on mobile */
+  }
 }
 
 header nav {
@@ -51,7 +65,8 @@ header nav {
 }
 
 header .logo {
-  width: 1200px;
+  width: 120px;
+  height: 120px;
 }
 
 header .logo img {
