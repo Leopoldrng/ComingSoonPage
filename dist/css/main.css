@@ -44,11 +44,11 @@ header {
 
 .logo {
   display: flex;
-  align-items: c;
+  align-items:end;
 }
 
 .logo img {
-  height: 40px;
+  height: 300px;
   margin-right: 100px;
 }
 
@@ -209,6 +209,16 @@ header .social-icon a:hover {
     width: 100%;
     height: 50px;
   }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 300px;
+    margin-right: 0px;
+  }
   .form-group button {
     height: 50px;
     width: 130px;
@@ -234,7 +244,7 @@ header .social-icon a:hover {
     width: 160px;
   }
   .newsletter-area {
-    padding-top: 150px;
+    padding-top: 0px;
     margin-bottom: 50px;
   }
 }
@@ -247,6 +257,22 @@ header .social-icon a:hover {
     overflow: hidden; ;
     display: block !important;
   } 
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 300px;
+    margin-right: 0px;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      justify-content: center; /* Centers logo on mobile */
+    }
+  }
   .social-icon a {
     color: black !important;
     border-color: black !important;
