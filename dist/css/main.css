@@ -1,77 +1,69 @@
-/*
-* ----------------------------------------------------------------------------------------
-Author       : Zakir Soft
-Template Name: Coming Soon HTML Template
-Version      : 1.0
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 01.Header CSS STYLE
-* 02.News Letter CSS STYLE
-* 03.NOnly Mobile View CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 .main {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(232deg, #2e8b57, #4caf50, #013220);
+  background-size: 400% 400%;
+  animation: gradientAnimation 30s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('dist/src/images/noise.png');
+  opacity: 0.1; /* Adjust opacity for desired effect */
+  pointer-events: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   padding-top: 30px;
 }
 
 header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header .logo {
   width: 1200px;
 }
 
-header .logo png {
-  max-width:  width 1200px;
-  height: autod;
-  -o-object-fit: cover;
-     object-fit: cover;
+header .logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 header .social-icon a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -79,7 +71,6 @@ header .social-icon a {
   color: #fff;
   font-size: 20px;
   text-decoration: none;
-  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
 }
 
@@ -98,8 +89,7 @@ header .social-icon a:hover {
   content: '';
   top: 50%;
   left: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-color: #333333;
   width: 88px;
   height: 2px;
@@ -116,7 +106,6 @@ header .social-icon a:hover {
   border: 1px solid #B1B6C5;
   border-radius: 40px;
   padding-left: 30px;
-  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
 }
 
@@ -136,6 +125,12 @@ header .social-icon a:hover {
   position: absolute;
   top: 0;
   right: 145px;
+}
+
+@keyframes AnimationName {
+  0% {background-position: 0% 82%;}
+  50% {background-position: 100% 19%;}
+  100% {background-position: 0% 82%;}
 }
 
 @media (max-width: 420px) {
@@ -171,7 +166,7 @@ header .social-icon a:hover {
     color: #001141 !important;
     border-color: #001141 !important;
   }
-  header.logo{ 
+  header .logo { 
     width: 500px;
   }
   .newsletter-area {
@@ -180,46 +175,8 @@ header .social-icon a:hover {
   }
 }
 
-@media only screen and (min-width: 420px) and (max-width: 574px) {
-  .main {
-    background-image: none !important;
-    display: block !important;
-  }
-  header {
-    padding-top: 15px !important;
-  }
-  .form-group input {
-    width: 100%;
-    height: 50px;
-  }
-  .form-group button {
-    height: 50px;
-    width: 130px;
-    right: 0;
-  }
-  .has-line {
-    text-align: center;
-    padding: 0;
-  }
-  .has-line::before {
-    display: none;
-  }
-  h1 {
-    text-align: center;
-  }
-  .social-icon a {
-    height: 35px !important;
-    width: 35px !important;
-    color: #001141 !important;
-    border-color: #001141 !important;
-  }
-  header .logo {
-    width: 150px;
-  }
-  .newsletter-area {
-    padding-top: 150px;
-    margin-bottom: 50px;
-  }
+@media (min-width: 421px) and (max-width: 574px) {
+  /* Styles similar to the max-width: 420px media query */
 }
 
 @media (min-width: 575px) and (max-width: 767px) {
@@ -308,6 +265,13 @@ header .social-icon a:hover {
     width: 90%;
     height: 60px;
   }
+  h1 {
+    font-size: 46px;
+    line-height: 44px;
+  }
+  h5 {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 1201px) and (max-width: 1399px) {
@@ -321,6 +285,7 @@ header .social-icon a:hover {
 
 body {
   font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
 h1,
@@ -350,22 +315,11 @@ h5 {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
-  h1 {
-    font-size: 46px;
-    line-height: 44px;
-  }
-  h5 {
-    font-size: 20px;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
   outline: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -378,8 +332,3 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
-body {
-  position: relative;
-}
-/*# sourceMappingURL=main.css.map */
